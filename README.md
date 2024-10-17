@@ -1,7 +1,7 @@
 # Lab 2 (XML Parsers)
 
 1. Create an ***XML file*** and its corresponding ***XSD schema***.
-    - When developing the XSD, use simple and complex types, enumerations, boundary values, mandatory use of attributes, and the ID type.
+    - When developing the XSD, use simple and complex types, enumerations, restrictions, mandatory use of attributes, and the ID type attributes.
 2. Generate (create) Java class that corresponds to that description.
 3. Create a Java application to parse XML document and initialise a collection of objects with information from the XML file.
     - Use ***SAX***, ***DOM*** and ***StAX*** parsers.
