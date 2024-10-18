@@ -11,9 +11,9 @@
                         <xs:sequence>
                             <xs:element name="Name" type="xs:string"/>
                             <xs:element name="Energy" type="EnergyType"/>
-                            <xs:element name="Type"/>
-                            <xs:element name="Ingredients"/>
-                            <xs:element name="Value"/>
+                            <xs:element name="Type" type="CandyType"/>
+                            <xs:element name="Ingredients" type="IngredientsType"/>
+                            <xs:element name="Value" type="ValueType"/>
                             <xs:element name="Production" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
@@ -30,4 +30,51 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!--  CandyTypeEnum  -->
+    <xs:simpleType name="CandyTypeEnum">
+        <xs:restriction>
+            <xs:enumeration value="Caramel"/>
+            <xs:enumeration value="Toffee"/>
+            <xs:enumeration value="Chocolate"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--  CandyType  -->
+    <xs:complexType name="CandyType">
+        <xs:simpleContent>
+            <xs:extension base="CandyTypeEnum">
+                <xs:attribute name="filling" type="xs:string" use="required"/>
+                <xs:attribute name="id" type="xs:ID"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!--  IngredientsType  -->
+    <xs:complexType name="IngredientsType">
+        <xs:sequence>
+            <xs:element name="Water" type="xs:decimal"/>
+            <xs:element name="Sugar" type="xs:positiveInteger"/>
+            <xs:element name="Fructose" type="xs:positiveInteger"/>
+            <xs:element name="ChocolateType" type="ChocolateTypeEnum" minOccurs="0"/>
+            <xs:element name="Vanillin" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ChocolateTypeEnum -->
+    <xs:simpleType name="ChocolateTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="White"/>
+            <xs:enumeration value="Milk"/>
+            <xs:enumeration value="Dark"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--  ValueType  -->
+    <xs:complexType name="ValueType">
+        <xs:sequence>
+            <xs:element name="Proteins" type="xs:decimal"/>
+            <xs:element name="Fats" type="xs:decimal"/>
+            <xs:element name="Carbohydrates" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>
