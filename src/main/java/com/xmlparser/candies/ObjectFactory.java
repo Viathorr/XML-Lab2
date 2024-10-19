@@ -7,8 +7,7 @@ public class ObjectFactory {
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.xmlparser.candies
      * 
      */
-    public ObjectFactory() {
-    }
+    public ObjectFactory() {}
 
     /**
      * Create an instance of {@link Candies }
@@ -19,11 +18,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Candies.Candy }
+     * Create an instance of {@link Candy }
      * 
      */
-    public Candies.Candy createCandiesCandy() {
-        return new Candies.Candy();
+    public Candy createCandiesCandy() {
+        return new Candy();
     }
 
     /**
