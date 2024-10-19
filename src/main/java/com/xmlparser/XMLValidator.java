@@ -4,6 +4,8 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
@@ -12,14 +14,12 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 
 public class XMLValidator {
-    public static void main(String[] args) {
-        System.out.println("Validation of \"Candies.xml\" file against the XSD schema \"Cnadies.xsd\".");
+    private static final Logger logger = Logger.getLogger(XMLValidator.class.getName());
 
-        if (validateXMLSchema("Candie.xsd", "Candies.xml")) {
-            System.out.println("Validation passed!");
-        } else {
-            System.out.println("Validation failed!");
-        }
+    public static void main(String[] args) {
+        logger.info("Validation of \"Candies.xml\" file against the XSD schema \"Candies.xsd\".");
+
+        validateXMLSchema("Candies.xsd", "Candies.xml");
     }
 
     public static boolean validateXMLSchema(String xsdPath, String xmlPath) {
@@ -31,12 +31,14 @@ public class XMLValidator {
 
                 Validator validator = schema.newValidator();
                 validator.validate(new StreamSource(xmlStream));
+
+                logger.info("Validation successful for XML file: " + xmlPath);
             } else {
-                System.out.printf("File/-s \"%s\" and/or \"%s\" do(-es)n't exist.\n", xsdPath, xmlPath);
+                logger.severe(String.format("File/-s \"%s\" and/or \"%s\" do(-es) not exist.", xsdPath, xmlPath));
                 return false;
             }
         } catch (IOException | SAXException e) {
-            System.out.println("Exception: " + e.getMessage());
+            logger.log(Level.SEVERE, "Validation error: " + e.getMessage(), e);
             return false;
         }
         return true;
