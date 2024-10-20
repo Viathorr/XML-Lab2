@@ -4,7 +4,6 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.xml.XMLConstants;
@@ -32,13 +31,13 @@ public class XMLValidator {
                 Validator validator = schema.newValidator();
                 validator.validate(new StreamSource(xmlStream));
 
-                logger.info("Validation successful for XML file: " + xmlPath);
+                logger.info("XSD Validation successful for XML file: " + xmlPath);
             } else {
-                logger.severe(String.format("File/-s \"%s\" and/or \"%s\" do(-es) not exist.", xsdPath, xmlPath));
+                logger.severe("One or both of the files were not found in resources.");
                 return false;
             }
         } catch (IOException | SAXException e) {
-            logger.log(Level.SEVERE, "Validation error: " + e.getMessage(), e);
+            logger.severe("Validation error: " + e.getMessage());
             return false;
         }
         return true;
