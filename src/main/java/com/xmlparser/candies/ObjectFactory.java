@@ -26,14 +26,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CandyType }
-     * 
-     */
-    public CandyType createCandyType() {
-        return new CandyType();
-    }
-
-    /**
      * Create an instance of {@link IngredientsType }
      * 
      */

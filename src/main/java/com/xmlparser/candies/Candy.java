@@ -1,14 +1,33 @@
 package com.xmlparser.candies;
 
+import com.xmlparser.candies.enums.CandyTypeEnum;
+
 public class Candy {
 
     protected String name;
-    protected CandyType type;
+    protected CandyTypeEnum type;
+    protected String filling;
     protected IngredientsType ingredients;
     protected int energy;
     protected ValueType value;
     protected String production;
     protected String id;
+
+    public Candy() {}
+
+    public Candy(String name, CandyTypeEnum type,
+                 String filling, IngredientsType ingredients,
+                 int energy, ValueType value,
+                 String production, String id) {
+        this.name = name;
+        this.type = type;
+        this.filling = filling;
+        this.ingredients = ingredients;
+        this.energy = energy;
+        this.value = value;
+        this.production = production;
+        this.id = id;
+    }
 
     /**
      * Gets the value of the name property.
@@ -39,10 +58,10 @@ public class Candy {
      *
      * @return
      *     possible object is
-     *     {@link CandyType }
+     *     {@link CandyTypeEnum }
      *
      */
-    public CandyType getType() {
+    public CandyTypeEnum getType() {
         return type;
     }
 
@@ -51,11 +70,35 @@ public class Candy {
      *
      * @param value
      *     allowed object is
-     *     {@link CandyType }
+     *     {@link CandyTypeEnum }
      *
      */
-    public void setType(CandyType value) {
+    public void setType(CandyTypeEnum value) {
         this.type = value;
+    }
+
+    /**
+     * Gets the value of the filling property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getFilling() {
+        return filling;
+    }
+
+    /**
+     * Sets the value of the filling property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setFilling(String value) {
+        this.filling = value;
     }
 
     /**
@@ -161,13 +204,19 @@ public class Candy {
     /**
      * Sets the value of the id property.
      *
-     * @param value
+     * @param id
      *     allowed object is
      *     {@link String }
      *
      */
-    public void setId(String value) {
-        this.id = value;
+    public void setId(String id) {
+        this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Candy{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

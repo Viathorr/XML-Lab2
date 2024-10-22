@@ -1,5 +1,7 @@
 package com.xmlparser.candies;
 
+import com.xmlparser.candies.enums.ChocolateTypeEnum;
+
 public class IngredientsType {
 
     protected int water;
@@ -7,6 +9,16 @@ public class IngredientsType {
     protected int fructose;
     protected int vanillin;
     protected ChocolateTypeEnum chocolateType;
+
+    public IngredientsType() {}
+
+    public IngredientsType(int water, int sugar, int fructose, int vanillin, ChocolateTypeEnum chocolateType) {
+        this.water = water;
+        this.sugar = sugar;
+        this.fructose = fructose;
+        this.vanillin = vanillin;
+        this.chocolateType = chocolateType;
+    }
 
     /**
      * Gets the value of the water property.

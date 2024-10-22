@@ -6,6 +6,14 @@ public class ValueType {
     protected int fat;
     protected int carbohydrate;
 
+    public ValueType() {}
+
+    public ValueType(int protein, int fat, int carbohydrate) {
+        this.protein = protein;
+        this.fat = fat;
+        this.carbohydrate = carbohydrate;
+    }
+
     /**
      * Gets the value of the protein property.
      * 
