@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Candies>
+    <Candy>
+        <Name>Some Candy</Name>
+        <Type>Chocolate</Type>
+        <Ingredients>
+            <Water>0</Water>
+            <Sugar>15</Sugar>
+            <Fructose>2</Fructose>
+            <Vanillin>1</Vanillin>
+        </Ingredients>
+        <Energy>47</Energy>
+        <Flavor>Hazelnut</Flavor>
+    </Candy>
+</Candies>
