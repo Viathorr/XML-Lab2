@@ -1,5 +1,7 @@
 package com.xmlparsers.candies;
 
+import java.util.Objects;
+
 public class ValueType {
 
     protected int protein;
@@ -69,5 +71,25 @@ public class ValueType {
                 ", fat=" + fat +
                 ", carbohydrate=" + carbohydrate +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        ValueType valueType = (ValueType) o;
+
+        return protein == valueType.protein && fat == valueType.fat && carbohydrate == valueType.carbohydrate;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(protein, fat, carbohydrate);
     }
 }

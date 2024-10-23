@@ -2,6 +2,8 @@ package com.xmlparsers.candies;
 
 import com.xmlparsers.candies.enums.ChocolateTypeEnum;
 
+import java.util.Objects;
+
 public class IngredientsType {
 
     protected int water;
@@ -117,5 +119,26 @@ public class IngredientsType {
                 ", vanillin=" + vanillin +
                 ", chocolateType=" + (chocolateType != null ? chocolateType.value() : "no chocolate") +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        IngredientsType that = (IngredientsType) o;
+
+        return water == that.water && sugar == that.sugar && fructose == that.fructose && vanillin == that.vanillin
+                && chocolateType == that.chocolateType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(water, sugar, fructose, vanillin, chocolateType);
     }
 }
