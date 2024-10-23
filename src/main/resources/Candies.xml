@@ -59,7 +59,7 @@
     </Candy>
 
     <Candy id="candy04">
-        <Name>Kisses (Milk Chocolate with Almonds)</Name>
+        <Name>Hershey's nuggets (Milk Chocolate with Almonds)</Name>
         <Type filling="yes">Chocolate</Type>
         <Ingredients>
             <Water>0</Water>
@@ -68,7 +68,7 @@
             <Vanillin>2</Vanillin>
             <ChocolateType>Milk</ChocolateType>
         </Ingredients>
-        <Energy>160</Energy>
+        <Energy>150</Energy>
         <Value>
             <Protein>4</Protein>
             <Fat>12</Fat>
