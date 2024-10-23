@@ -18,17 +18,16 @@ public class XSLTransformer {
     public static void main(String[] args) {
         logger.info("Transformation of \"Candies.xml\" file according to XSL \"Candies.xsl\".");
 
-        transform("Candies.xml", "Candies.xsl");
+        transform("Candies.xml", "Candies.xsl", "src/main/resources/transformedXML/Candies.xml");
     }
 
-    public static void transform(String xmlPath, String xslPath) {
+    public static void transform(String xmlPath, String xslPath, String outputFilePath) {
         try (InputStream xmlStream = XSLTransformer.class.getClassLoader().getResourceAsStream(xmlPath);
             InputStream xslStream = XSLTransformer.class.getClassLoader().getResourceAsStream(xslPath)) {
             if (xmlStream != null && xslStream != null) {
                 TransformerFactory transformerFactory = TransformerFactory.newInstance();
                 Transformer transformer = transformerFactory.newTransformer(new StreamSource(xslStream));
 
-                String outputFilePath = String.format("src/main/resources/transformedXML/%s", xmlPath);
                 StreamResult out = new StreamResult(new File(outputFilePath));
                 transformer.transform(new StreamSource(xmlStream), out);
 
