@@ -62,8 +62,8 @@ public class StAXCandiesParser {
                                     parsedCandies.setEmptyListOfCandies();
                                 }
                                 // we don't proceed here to the nextEvent as in the cases below, because if we do so,
-                                // we will miss the next element from file, because we would read the next element twice
-                                // as our next if statement for "Candy" element will hold, compared to other elements
+                                // we will miss the next element from file, because we are reading the next element twice
+                                // as our next `if` statement doesn't hold for complex typed elements, compared to simple ones
                                 break;
                             case "name":
                                 nextEvent = reader.nextEvent();
