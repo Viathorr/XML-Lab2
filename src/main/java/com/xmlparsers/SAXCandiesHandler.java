@@ -1,11 +1,11 @@
-package com.xmlparser;
+package com.xmlparsers;
 
-import com.xmlparser.candies.Candies;
-import com.xmlparser.candies.Candy;
-import com.xmlparser.candies.IngredientsType;
-import com.xmlparser.candies.ValueType;
-import com.xmlparser.candies.enums.CandyTypeEnum;
-import com.xmlparser.candies.enums.ChocolateTypeEnum;
+import com.xmlparsers.candies.Candies;
+import com.xmlparsers.candies.Candy;
+import com.xmlparsers.candies.IngredientsType;
+import com.xmlparsers.candies.ValueType;
+import com.xmlparsers.candies.enums.CandyTypeEnum;
+import com.xmlparsers.candies.enums.ChocolateTypeEnum;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;

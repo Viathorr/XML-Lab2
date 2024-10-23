@@ -1,7 +1,7 @@
-package com.xmlparser;
+package com.xmlparsers;
 
-import com.xmlparser.candies.Candies;
-import com.xmlparser.candies.comparator.CandiesEnergyComparator;
+import com.xmlparsers.candies.Candies;
+import com.xmlparsers.candies.comparator.CandiesEnergyComparator;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class SAXCandiesParser {
         Candies parsedCandies = parse("Candies.xml");
         parsedCandies.getCandies().forEach(System.out::println);
 
-        logger.info("Sorting parsed candies be Energy(cal) value in ascending order.");
+        System.out.println("\nCandies after sorting:");
         parsedCandies.sortCandies(new CandiesEnergyComparator());
         parsedCandies.getCandies().forEach(System.out::println);
     }
@@ -44,7 +44,7 @@ public class SAXCandiesParser {
                 logger.severe("XML file was not found in resources.");
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
-            logger.severe("Parsing error: " + e.getMessage());
+            logger.severe("SAX parsing error: " + e.getMessage());
         }
 
         return new Candies();

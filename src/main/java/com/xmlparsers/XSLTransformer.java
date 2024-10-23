@@ -1,4 +1,4 @@
-package com.xmlparser;
+package com.xmlparsers;
 
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;

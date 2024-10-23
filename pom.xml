@@ -54,7 +54,7 @@
                 </executions>
                 <configuration>
                     <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-                    <packageName>com.xmlparser.candies</packageName>
+                    <packageName>com.xmlparsers.candies</packageName>
                     <sources>
                         <source>${project.basedir}/src/main/resources</source>
                     </sources>

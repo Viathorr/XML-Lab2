@@ -1,4 +1,4 @@
-package com.xmlparser.candies.enums;
+package com.xmlparsers.candies.enums;
 
 public enum CandyTypeEnum {
 
