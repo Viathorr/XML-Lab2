@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Candies>
+    <Chocolate>
+        <Candy id="candy01">
+                    
+            <Name>Lindor Chocolate with Hazelnut</Name>
+                    
+            <Type filling="yes">Chocolate</Type>
+                    
+            <Ingredients>
+                            
+                <Water>0</Water>
+                            
+                <Sugar>15</Sugar>
+                            
+                <Fructose>2</Fructose>
+                            
+                <Vanillin>1</Vanillin>
+                            
+                <ChocolateType>Milk</ChocolateType>
+                        
+            </Ingredients>
+                    
+            <Energy>47</Energy>
+                    
+            <Value>
+                            
+                <Protein>0</Protein>
+                            
+                <Fat>4</Fat>
+                            
+                <Carbohydrate>12</Carbohydrate>
+                        
+            </Value>
+                    
+            <Production>Lindt</Production>
+                
+        </Candy>
+    </Chocolate>
+</Candies>
