@@ -1,6 +1,6 @@
-package com.xmlparser.candies;
+package com.xmlparsers.candies;
 
-import com.xmlparser.candies.enums.CandyTypeEnum;
+import com.xmlparsers.candies.enums.CandyTypeEnum;
 
 public class Candy {
 
@@ -213,10 +213,23 @@ public class Candy {
         this.id = id;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Candy{" +
+//                "name='" + name + '\'' +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
-        return "Candy{" +
-                "name='" + name + '\'' +
-                '}';
+        return "\nCandy, id(\"" + id + "\"):\n" +
+                "name = '" + name + '\'' +
+                ", type = " + type +
+                ", filling = '" + filling + '\'' +
+                ", \ningredients = " + ingredients +
+                ", \nenergy = " + energy +
+                ", \nvalue = " + value +
+                ", \nproduction = '" + production + '\'';
     }
 }

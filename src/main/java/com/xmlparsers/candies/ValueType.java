@@ -1,4 +1,4 @@
-package com.xmlparser.candies;
+package com.xmlparsers.candies;
 
 public class ValueType {
 
@@ -62,4 +62,12 @@ public class ValueType {
         this.carbohydrate = value;
     }
 
+    @Override
+    public String toString() {
+        return "Value {" +
+                "protein=" + protein +
+                ", fat=" + fat +
+                ", carbohydrate=" + carbohydrate +
+                '}';
+    }
 }

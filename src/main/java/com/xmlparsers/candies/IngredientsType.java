@@ -1,6 +1,6 @@
-package com.xmlparser.candies;
+package com.xmlparsers.candies;
 
-import com.xmlparser.candies.enums.ChocolateTypeEnum;
+import com.xmlparsers.candies.enums.ChocolateTypeEnum;
 
 public class IngredientsType {
 
@@ -108,4 +108,14 @@ public class IngredientsType {
         this.chocolateType = value;
     }
 
+    @Override
+    public String toString() {
+        return "Ingredients {" +
+                "water=" + water +
+                ", sugar=" + sugar +
+                ", fructose=" + fructose +
+                ", vanillin=" + vanillin +
+                ", chocolateType=" + (chocolateType != null ? chocolateType.value() : "no chocolate") +
+                '}';
+    }
 }
