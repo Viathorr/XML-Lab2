@@ -36,10 +36,10 @@ public class DOMCandiesParser {
 
         Candies parsedCandies = new Candies();
 
-        try (InputStream xmlFile = DOMCandiesParser.class.getClassLoader().getResourceAsStream(xmlPath)) {
-            if (xmlFile != null) {
+        try (InputStream xmlStream = DOMCandiesParser.class.getClassLoader().getResourceAsStream(xmlPath)) {
+            if (xmlStream != null) {
                 DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-                Document document = documentBuilder.parse(xmlFile);
+                Document document = documentBuilder.parse(xmlStream);
 
                 NodeList candiesList = document.getElementsByTagName("Candy");
                 parsedCandies.setEmptyListOfCandies();
