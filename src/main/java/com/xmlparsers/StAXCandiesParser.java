@@ -4,7 +4,6 @@ import com.xmlparsers.candies.Candies;
 import com.xmlparsers.candies.Candy;
 import com.xmlparsers.candies.IngredientsType;
 import com.xmlparsers.candies.ValueType;
-import com.xmlparsers.candies.comparator.CandiesEnergyComparator;
 import com.xmlparsers.candies.enums.CandyTypeEnum;
 import com.xmlparsers.candies.enums.ChocolateTypeEnum;
 
@@ -22,18 +21,7 @@ import java.util.logging.Logger;
 public class StAXCandiesParser {
     private static final Logger logger = Logger.getLogger(StAXCandiesParser.class.getName());
 
-    public static void main(String[] args) {
-        logger.info("Parsing a \"Candies.xml\" file with StAX Parser.");
-
-        Candies parsedCandies = parse("Candies.xml");
-        parsedCandies.getCandies().forEach(System.out::println);
-
-        System.out.println("\nCandies after sorting:");
-        parsedCandies.sortCandies(new CandiesEnergyComparator());
-        parsedCandies.getCandies().forEach(System.out::println);
-    }
-
-    public static Candies parse(String xmlPath) {
+    public Candies parse(String xmlPath) {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 
         Candies parsedCandies = new Candies();

@@ -1,7 +1,6 @@
 package com.xmlparsers;
 
 import com.xmlparsers.candies.Candies;
-import com.xmlparsers.candies.comparator.CandiesEnergyComparator;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
@@ -14,18 +13,7 @@ import javax.xml.parsers.SAXParserFactory;
 public class SAXCandiesParser {
     private static final Logger logger = Logger.getLogger(SAXCandiesParser.class.getName());
 
-    public static void main(String[] args) {
-        logger.info("Parsing a \"Candies.xml\" file with SAX Parser.");
-
-        Candies parsedCandies = parse("Candies.xml");
-        parsedCandies.getCandies().forEach(System.out::println);
-
-        System.out.println("\nCandies after sorting:");
-        parsedCandies.sortCandies(new CandiesEnergyComparator());
-        parsedCandies.getCandies().forEach(System.out::println);
-    }
-
-    public static Candies parse(String xmlPath) {
+    public Candies parse(String xmlPath) {
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 
         try (InputStream xmlStream = XMLValidator.class.getClassLoader().getResourceAsStream(xmlPath)) {

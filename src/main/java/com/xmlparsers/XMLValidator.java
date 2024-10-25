@@ -15,13 +15,7 @@ import javax.xml.validation.Validator;
 public class XMLValidator {
     private static final Logger logger = Logger.getLogger(XMLValidator.class.getName());
 
-    public static void main(String[] args) {
-        logger.info("Validation of \"Candies.xml\" file against the XSD schema \"Candies.xsd\".");
-
-        validateXMLSchema("Candies.xsd", "Candies.xml");
-    }
-
-    public static boolean validateXMLSchema(String xsdPath, String xmlPath) {
+    public boolean validateXMLSchema(String xsdPath, String xmlPath) {
         try (InputStream xsdStream = XMLValidator.class.getClassLoader().getResourceAsStream(xsdPath);
              InputStream xmlStream = XMLValidator.class.getClassLoader().getResourceAsStream(xmlPath)) {
             if (xsdStream != null && xmlStream != null) {

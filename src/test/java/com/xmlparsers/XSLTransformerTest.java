@@ -13,10 +13,11 @@ class XSLTransformerTest {
 
     @Test
     void testXSLTransformation() throws IOException {
+        XSLTransformer transformer = new XSLTransformer();
         String outputFilePath = "src/test/resources/transformedXML/candies.xml";
         String expectedOutputFilePath = "src/test/resources/transformedXML/valid_candies.xml";
 
-        XSLTransformer.transform("valid_candies.xml", "candies.xsl",
+        transformer.transform("valid_candies.xml", "candies.xsl",
                 outputFilePath);
 
         File outputFile = new File(outputFilePath);

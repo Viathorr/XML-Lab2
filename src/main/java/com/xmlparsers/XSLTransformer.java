@@ -15,13 +15,7 @@ import java.util.logging.Logger;
 public class XSLTransformer {
     private static final Logger logger = Logger.getLogger(XMLValidator.class.getName());
 
-    public static void main(String[] args) {
-        logger.info("Transformation of \"Candies.xml\" file according to XSL \"Candies.xsl\".");
-
-        transform("Candies.xml", "Candies.xsl", "src/main/resources/transformedXML/Candies.xml");
-    }
-
-    public static void transform(String xmlPath, String xslPath, String outputFilePath) {
+    public void transform(String xmlPath, String xslPath, String outputFilePath) {
         try (InputStream xmlStream = XSLTransformer.class.getClassLoader().getResourceAsStream(xmlPath);
             InputStream xslStream = XSLTransformer.class.getClassLoader().getResourceAsStream(xslPath)) {
             if (xmlStream != null && xslStream != null) {

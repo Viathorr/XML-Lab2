@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Going to stick to Pascal Case naming style (ElementName) -->
-
 <Candies>
     <Candy id="candy01">
         <Name>Lindor Chocolate with Hazelnut</Name>

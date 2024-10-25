@@ -12,10 +12,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DOMCandiesParserTest {
+    DOMCandiesParser parser = new DOMCandiesParser();
 
     @Test
     void testCorrectParsing() {
-        Candies parsedCandies = DOMCandiesParser.parse("valid_candies.xml");
+        Candies parsedCandies = parser.parse("valid_candies.xml");
 
         List<Candy> candies = parsedCandies.getCandies();
         IngredientsType expectedIngredients = new IngredientsType(0, 15, 2, 1, ChocolateTypeEnum.MILK);
@@ -32,7 +33,7 @@ class DOMCandiesParserTest {
 
     @Test
     void testFileNonExistence() {
-        Candies parsedCandies = DOMCandiesParser.parse("invalid_file.xml");
+        Candies parsedCandies = parser.parse("invalid_file.xml");
 
         assertNull(parsedCandies.getCandies());
     }

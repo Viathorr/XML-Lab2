@@ -5,13 +5,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class XMLValidatorTest {
+    XMLValidator validator = new XMLValidator();
 
     @Test
     void testValidXML() {
         String xsdPath = "candies.xsd";
         String xmlPath = "valid_candies.xml";
 
-        assertTrue(XMLValidator.validateXMLSchema(xsdPath, xmlPath));
+        assertTrue(validator.validateXMLSchema(xsdPath, xmlPath));
     }
 
     @Test
@@ -19,6 +20,6 @@ class XMLValidatorTest {
         String xsdPath = "candies.xsd";
         String xmlPath = "invalid_candies.xml";
 
-        assertFalse(XMLValidator.validateXMLSchema(xsdPath, xmlPath));
+        assertFalse(validator.validateXMLSchema(xsdPath, xmlPath));
     }
 }
