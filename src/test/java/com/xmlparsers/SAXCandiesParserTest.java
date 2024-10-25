@@ -1,10 +1,9 @@
 package com.xmlparsers;
 
-import com.xmlparsers.candies.Candies;
-import com.xmlparsers.candies.Candy;
-import com.xmlparsers.candies.IngredientsType;
-import com.xmlparsers.candies.ValueType;
-import com.xmlparsers.candies.enums.ChocolateTypeEnum;
+import generated.Candies;
+import generated.ChocolateTypeEnum;
+import generated.IngredientsType;
+import generated.ValueType;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -18,7 +17,7 @@ class SAXCandiesParserTest {
     void testCorrectParsing() {
         Candies parsedCandies = parser.parse("valid_candies.xml");
 
-        List<Candy> candies = parsedCandies.getCandies();
+        List<Candies.Candy> candies = parsedCandies.getCandies();
         IngredientsType expectedIngredients = new IngredientsType(0, 15, 2, 1, ChocolateTypeEnum.MILK);
         ValueType expectedValue = new ValueType(0, 4, 12);
 

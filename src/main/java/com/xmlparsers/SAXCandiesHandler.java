@@ -1,11 +1,6 @@
 package com.xmlparsers;
 
-import com.xmlparsers.candies.Candies;
-import com.xmlparsers.candies.Candy;
-import com.xmlparsers.candies.IngredientsType;
-import com.xmlparsers.candies.ValueType;
-import com.xmlparsers.candies.enums.CandyTypeEnum;
-import com.xmlparsers.candies.enums.ChocolateTypeEnum;
+import generated.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -16,7 +11,7 @@ public class SAXCandiesHandler extends DefaultHandler {
     private static final Logger logger = Logger.getLogger(SAXCandiesParser.class.getName());
 
     private Candies candies;
-    private Candy candy;
+    private Candies.Candy candy;
     private IngredientsType ingredients;
     private ValueType value;
     private StringBuilder elementValue;
@@ -46,7 +41,7 @@ public class SAXCandiesHandler extends DefaultHandler {
         switch (qName.toLowerCase()) {
             case "candy":
                 String id = attributes.getValue("id");
-                candy = new Candy();
+                candy = new Candies.Candy();
                 candy.setId(id);
                 if (this.candies.getCandies() == null) {
                     this.candies.setEmptyListOfCandies();

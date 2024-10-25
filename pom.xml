@@ -37,6 +37,11 @@
             <artifactId>validation-api</artifactId>
             <version>2.0.1.Final</version>
         </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -54,9 +59,9 @@
                 </executions>
                 <configuration>
                     <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
-                    <packageName>com.xmlparsers.candies</packageName>
+<!--                    <packageName>com.xmlparsers.candies</packageName>-->
                     <sources>
-                        <source>${project.basedir}/src/main/resources</source>
+                        <source>${project.basedir}/src/main/resources/xsd</source>
                     </sources>
                 </configuration>
             </plugin>

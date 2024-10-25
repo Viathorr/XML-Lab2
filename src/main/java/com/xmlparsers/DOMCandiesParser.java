@@ -1,11 +1,6 @@
 package com.xmlparsers;
 
-import com.xmlparsers.candies.Candies;
-import com.xmlparsers.candies.Candy;
-import com.xmlparsers.candies.IngredientsType;
-import com.xmlparsers.candies.ValueType;
-import com.xmlparsers.candies.enums.CandyTypeEnum;
-import com.xmlparsers.candies.enums.ChocolateTypeEnum;
+import generated.*;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -33,7 +28,7 @@ public class DOMCandiesParser {
                 parsedCandies.setEmptyListOfCandies();
 
                 for (int i = 0; i < candiesList.getLength(); i++) {
-                    Candy candy = new Candy();
+                    Candies.Candy candy = new Candies.Candy();
                     Node candyNode = candiesList.item(i);
 
                     if (candyNode.getNodeType() == Node.ELEMENT_NODE) {

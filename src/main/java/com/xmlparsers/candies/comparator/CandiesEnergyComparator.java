@@ -1,6 +1,6 @@
 package com.xmlparsers.candies.comparator;
 
-import com.xmlparsers.candies.Candy;
+import generated.Candies.Candy;
 
 import java.util.Comparator;
 

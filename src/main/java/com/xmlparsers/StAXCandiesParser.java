@@ -1,11 +1,6 @@
 package com.xmlparsers;
 
-import com.xmlparsers.candies.Candies;
-import com.xmlparsers.candies.Candy;
-import com.xmlparsers.candies.IngredientsType;
-import com.xmlparsers.candies.ValueType;
-import com.xmlparsers.candies.enums.CandyTypeEnum;
-import com.xmlparsers.candies.enums.ChocolateTypeEnum;
+import generated.*;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
@@ -30,7 +25,7 @@ public class StAXCandiesParser {
             if (xmlStream != null) {
                 XMLEventReader reader = xmlInputFactory.createXMLEventReader(xmlStream);
 
-                Candy candy = new Candy();
+                Candies.Candy candy = new Candies.Candy();
                 IngredientsType ingredients = new IngredientsType();
                 ValueType value = new ValueType();
 
@@ -117,7 +112,7 @@ public class StAXCandiesParser {
                         switch (qName.toLowerCase()) {
                             case "candy":
                                 parsedCandies.addCandy(candy);
-                                candy = new Candy();
+                                candy = new Candies.Candy();
                                 break;
                             case "ingredients":
                                 candy.setIngredients(ingredients);

@@ -1,6 +1,6 @@
 package com.xmlparsers;
 
-import com.xmlparsers.candies.Candies;
+import generated.Candies;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
